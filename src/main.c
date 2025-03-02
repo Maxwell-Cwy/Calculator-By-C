@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include "dfa.h"
 #include "parse.h"
-#include "lr0.h"
+#include "slr.h"
 
 int main() {
     char expression[100];
@@ -16,7 +16,7 @@ int main() {
         printf("请输入一个四则运算表达式:");
         scanf("%s", expression);
         analays(expression, current);
-        lr0Run();
+        slrRun();
         printf("按1返回:");
         scanf("%d", &back);
         if (back == 1) {

@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include "dfa.h"
-#include "lr0.h"
+#include "slr.h"
 
 Token* t = token;
 
@@ -73,7 +73,7 @@ F -> num
 F -> ( E )        
 */
 
-void lr0Run(){
+void slrRun(){
     char str[5];
     int i=0;
     Stack stateStack,symbolStack,valueStack;
