@@ -1,10 +1,10 @@
 file(REMOVE_RECURSE
   "CMakeFiles/c_calcu.dir/src/dfa.c.o"
   "CMakeFiles/c_calcu.dir/src/dfa.c.o.d"
-  "CMakeFiles/c_calcu.dir/src/lr0.c.o"
-  "CMakeFiles/c_calcu.dir/src/lr0.c.o.d"
   "CMakeFiles/c_calcu.dir/src/main.c.o"
   "CMakeFiles/c_calcu.dir/src/main.c.o.d"
+  "CMakeFiles/c_calcu.dir/src/slr.c.o"
+  "CMakeFiles/c_calcu.dir/src/slr.c.o.d"
   "c_calcu"
   "c_calcu.pdb"
 )

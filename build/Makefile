@@ -57,10 +57,10 @@ RM = /Applications/CMake.app/Contents/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/cwy/Desktop/c/c_calcu_lr0
+CMAKE_SOURCE_DIR = /Users/cwy/Desktop/c/c_calcu_slr
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/cwy/Desktop/c/c_calcu_lr0/build
+CMAKE_BINARY_DIR = /Users/cwy/Desktop/c/c_calcu_slr/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/cwy/Desktop/c/c_calcu_lr0/build/CMakeFiles /Users/cwy/Desktop/c/c_calcu_lr0/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/cwy/Desktop/c/c_calcu_slr/build/CMakeFiles /Users/cwy/Desktop/c/c_calcu_slr/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/cwy/Desktop/c/c_calcu_lr0/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/cwy/Desktop/c/c_calcu_slr/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -153,30 +153,6 @@ src/dfa.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/c_calcu.dir/build.make CMakeFiles/c_calcu.dir/src/dfa.c.s
 .PHONY : src/dfa.c.s
 
-src/lr0.o: src/lr0.c.o
-.PHONY : src/lr0.o
-
-# target to build an object file
-src/lr0.c.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/c_calcu.dir/build.make CMakeFiles/c_calcu.dir/src/lr0.c.o
-.PHONY : src/lr0.c.o
-
-src/lr0.i: src/lr0.c.i
-.PHONY : src/lr0.i
-
-# target to preprocess a source file
-src/lr0.c.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/c_calcu.dir/build.make CMakeFiles/c_calcu.dir/src/lr0.c.i
-.PHONY : src/lr0.c.i
-
-src/lr0.s: src/lr0.c.s
-.PHONY : src/lr0.s
-
-# target to generate assembly for a file
-src/lr0.c.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/c_calcu.dir/build.make CMakeFiles/c_calcu.dir/src/lr0.c.s
-.PHONY : src/lr0.c.s
-
 src/main.o: src/main.c.o
 .PHONY : src/main.o
 
@@ -201,6 +177,30 @@ src/main.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/c_calcu.dir/build.make CMakeFiles/c_calcu.dir/src/main.c.s
 .PHONY : src/main.c.s
 
+src/slr.o: src/slr.c.o
+.PHONY : src/slr.o
+
+# target to build an object file
+src/slr.c.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/c_calcu.dir/build.make CMakeFiles/c_calcu.dir/src/slr.c.o
+.PHONY : src/slr.c.o
+
+src/slr.i: src/slr.c.i
+.PHONY : src/slr.i
+
+# target to preprocess a source file
+src/slr.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/c_calcu.dir/build.make CMakeFiles/c_calcu.dir/src/slr.c.i
+.PHONY : src/slr.c.i
+
+src/slr.s: src/slr.c.s
+.PHONY : src/slr.s
+
+# target to generate assembly for a file
+src/slr.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/c_calcu.dir/build.make CMakeFiles/c_calcu.dir/src/slr.c.s
+.PHONY : src/slr.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -213,12 +213,12 @@ help:
 	@echo "... src/dfa.o"
 	@echo "... src/dfa.i"
 	@echo "... src/dfa.s"
-	@echo "... src/lr0.o"
-	@echo "... src/lr0.i"
-	@echo "... src/lr0.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/slr.o"
+	@echo "... src/slr.i"
+	@echo "... src/slr.s"
 .PHONY : help
 
 

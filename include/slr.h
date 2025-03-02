@@ -1,5 +1,5 @@
-#ifndef _LR0_H
-#define _LR0_H
+#ifndef _SLR_H
+#define _SLR_H
 
 
 #define S0 22
@@ -39,5 +39,5 @@ typedef struct {
     int top;
 } Stack;
 
-void lr0Run();
+void slrRun();
 #endif
