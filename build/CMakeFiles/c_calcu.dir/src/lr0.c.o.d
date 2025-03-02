@@ -1,5 +1,5 @@
 CMakeFiles/c_calcu.dir/src/lr0.c.o: \
-  /Users/cwy/Desktop/c/c_calcu/src/lr0.c \
+  /Users/cwy/Desktop/c/c_calcu_lr0/src/lr0.c \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/include/stdio.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/include/_stdio.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/include/sys/cdefs.h \
@@ -90,5 +90,5 @@ CMakeFiles/c_calcu.dir/src/lr0.c.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/include/_strings.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/include/secure/_strings.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/include/secure/_string.h \
-  /Users/cwy/Desktop/c/c_calcu/include/dfa.h \
-  /Users/cwy/Desktop/c/c_calcu/include/lr0.h
+  /Users/cwy/Desktop/c/c_calcu_lr0/include/dfa.h \
+  /Users/cwy/Desktop/c/c_calcu_lr0/include/lr0.h

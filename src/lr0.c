@@ -6,30 +6,27 @@
 
 Token* t = token;
 
+int controlPrint=0;
 
-int lr0Table[22][13]={
-    0  ,0  ,0  ,0  ,S4 ,0  ,S5 ,0  ,1  ,2  ,3  ,0  ,0  ,
-    0  ,0  ,0  ,0  ,0  ,0  ,0  ,acc,0  ,0  ,0  ,0  ,0  ,
-    S6 ,S7 ,0  ,0  ,0  ,0  ,0  ,R4 ,0  ,0  ,0  ,8  ,0  ,
-    0  ,0  ,S9 ,S10,0  ,0  ,0  ,R8 ,0  ,0  ,0  ,0  ,11 ,
-    0  ,0  ,0  ,0  ,S4 ,0  ,S5 ,0  ,12 ,2  ,3  ,0  ,0  ,
-    R10,R10,R10,R10,R10,R10,0  ,R10,0  ,0  ,0  ,0  ,0  ,
-    0  ,0  ,0  ,0  ,S4 ,0  ,S5 ,0  ,0  ,13 ,3  ,0  ,0  ,
-    0  ,0  ,0  ,0  ,S4 ,0  ,S5 ,0  ,0  ,14 ,3  ,0  ,0  ,
-    R1 ,R1 ,R1 ,R1 ,R1 ,R1 ,0  ,R1 ,0  ,0  ,0  ,0  ,0  ,
-    0  ,0  ,0  ,0  ,S4 ,0  ,S5 ,0  ,0  ,0  ,15 ,0  ,0  ,
-    0  ,0  ,0  ,0  ,S4 ,0  ,S5 ,0  ,0  ,0  ,16 ,0  ,0  ,
-    R5 ,R5 ,R5 ,R5 ,R5 ,R5 ,0  ,R5 ,0  ,0  ,0  ,0  ,0  ,
-    0  ,0  ,0  ,0  ,0  ,S21,0  ,0  ,0  ,0  ,0  ,0  ,0  ,
-    S6 ,S7 ,0  ,0  ,0  ,0  ,0  ,R4 ,0  ,0  ,0  ,17 ,0  ,
-    S6 ,S7 ,0  ,0  ,0  ,0  ,0  ,R4 ,0  ,0  ,0  ,18 ,0  ,
-    0  ,0  ,S9 ,S10,0  ,0  ,0  ,R8 ,0  ,0  ,0  ,0  ,19 ,
-    0  ,0  ,S10,S10,0  ,0  ,0  ,R8 ,0  ,0  ,0  ,0  ,20 ,
-    R2 ,R2 ,R2 ,R2 ,R2 ,R2 ,0  ,R2 ,0  ,0  ,0  ,0  ,0  ,
-    R3 ,R3 ,R3 ,R3 ,R3 ,R3 ,0  ,R3 ,0  ,0  ,0  ,0  ,0  ,
-    R6 ,R6 ,R6 ,R6 ,R6 ,R6 ,0  ,R6 ,0  ,0  ,0  ,0  ,0  ,
-    R7 ,R7 ,R7 ,R7 ,R7 ,R7 ,0  ,R7 ,0  ,0  ,0  ,0  ,0  ,
-    R9 ,R9 ,R9 ,R9 ,R9 ,R9 ,0  ,R9 ,0  ,0  ,0  ,0  ,0  ,
+
+int lr0Table[17][12]={
+    S4 ,0  ,0  ,0  ,0  ,S5 ,0  ,0  ,16 ,1  ,2  ,3  ,
+    0  ,S6 ,S7 ,0  ,0  ,0  ,0  ,R1 ,0  ,0  ,0  ,0  ,
+    0  ,R4 ,R4 ,S10,S11,0  ,R4 ,R4 ,0  ,0  ,0  ,0  ,
+    0  ,R7 ,R7 ,R7 ,R7 ,0  ,R7 ,R7 ,0  ,0  ,0  ,0  ,
+    0  ,R8 ,R8 ,R8 ,R8 ,0  ,R8 ,R8 ,0  ,0  ,0  ,0  ,
+    S4 ,0  ,0  ,0  ,0  ,S5 ,0  ,0  ,0  ,14 ,2  ,3  ,
+    S4 ,0  ,0  ,0  ,0  ,S5 ,0  ,0  ,0  ,0  ,8  ,3  ,
+    S4 ,0  ,0  ,0  ,0  ,S5 ,0  ,0  ,0  ,0  ,9  ,3  ,
+    0  ,R2 ,R2 ,S10,S11,0  ,R2 ,R2 ,0  ,0  ,0  ,0  ,
+    0  ,R3 ,R3 ,S10,S11,0  ,R3 ,R3 ,0  ,0  ,0  ,0  ,
+    S4 ,0  ,0  ,0  ,0  ,S5 ,0  ,0  ,0  ,0  ,0  ,12 ,
+    S4 ,0  ,0  ,0  ,0  ,S5 ,0  ,0  ,0  ,0  ,0  ,13 ,
+    0  ,R5 ,R5 ,R5 ,R5 ,0  ,R5 ,R5 ,0  ,0  ,0  ,0  ,
+    0  ,R6 ,R6 ,R6 ,R6 ,0  ,R6 ,R6 ,0  ,0  ,0  ,0  ,
+    0  ,S6 ,S7 ,0  ,0  ,0  ,S15,0  ,0  ,0  ,0  ,0  ,
+    0  ,R9 ,R9 ,R9 ,R9 ,0  ,R9 ,R9 ,0  ,0  ,0  ,0  ,
+    0  ,0  ,0  ,0  ,0  ,0  ,0  ,acc,0  ,0  ,0  ,0  ,
     };
 
 void stackInit(Stack *stack) {
@@ -65,37 +62,37 @@ char* stackPeek(Stack *stack) {
 
 
 /*
-S' -> E         { print(E.val); }
-E -> T E'       { E.val = E'.val; }
-E' -> + T E1'   { E'.val = E.val + T.val; }
-E' -> - T E1'   { E'.val = E.val - T.val; }
-E' -> ε         { E'.val = E.val; }
-T -> F T'       { T.val = T'.val; }
-T' -> * F T1'   { T'.val = T.val * F.val; }
-T' -> / F T1'   { T'.val = T.val / F.val; }
-T' -> ε         { T'.val = T.val; }
-F -> ( E )      { F.val = E.val; }
-F -> num        { F.val = num.val; }
+S -> E        
+E -> E + T       
+E -> E - T 
+E -> T         
+T -> T * F      
+T -> T / F
+T ->  F    
+F -> num   
+F -> ( E )        
 */
 
 void lr0Run(){
     char str[5];
     int i=0;
-    Stack stateStack,symbolStack;
+    Stack stateStack,symbolStack,valueStack;
     char *currentState=NULL;
     char *currentSymbol=NULL;
     char *currentToken=NULL;
     int stateIndex = 0;
     int symbolIndex = 0;
     int ruleNum=0;
-    char chBuf[5];
-    float fVal,eVal,ePVal,tVal,tPVal;
-
+    float result=0;
+    char chBuf[5],chBuf2[5],chBuf3[5];
+    float buf1,buf2,buf3;
     sprintf(str, "%d", 0);
     stackInit(&stateStack);
     stackInit(&symbolStack);
+    stackInit(&valueStack);
     stackPush(&stateStack,str);
     stackPush(&symbolStack,"$");
+    stackPush(&valueStack,"$");
     
     t=token;
 
@@ -111,101 +108,131 @@ void lr0Run(){
     currentSymbol = stackPeek(&symbolStack);
     currentToken = t->value;
 
-    while(!(strcmp(currentState, "22") == 0)){
+    while(!(strcmp(currentState, "17") == 0)){
         currentState = stackPeek(&stateStack);
         currentSymbol = stackPeek(&symbolStack);
         currentToken = t->value;
 
         if(stateStack.top==symbolStack.top){//两个栈高度相同
             stateIndex=atoi(currentState);
-            if (strcmp(currentToken, "+") == 0) symbolIndex = 0;
-            else if (strcmp(currentToken, "-") == 0) symbolIndex = 1;
-            else if (strcmp(currentToken, "*") == 0) symbolIndex = 2;
-            else if (strcmp(currentToken, "/") == 0) symbolIndex = 3;
-            else if (strcmp(currentToken, "(") == 0) symbolIndex = 4;
-            else if (strcmp(currentToken, ")") == 0) symbolIndex = 5;        
+            if (strcmp(currentToken, "+") == 0) symbolIndex = 1;
+            else if (strcmp(currentToken, "-") == 0) symbolIndex = 2;
+            else if (strcmp(currentToken, "*") == 0) symbolIndex = 3;
+            else if (strcmp(currentToken, "/") == 0) symbolIndex = 4;
+            else if (strcmp(currentToken, "(") == 0) symbolIndex = 5;
+            else if (strcmp(currentToken, ")") == 0) symbolIndex = 6;        
             else if (strcmp(currentToken, "$") == 0) symbolIndex = 7; 
-            else {symbolIndex=6;}
+            else {symbolIndex=0;}
 
             if((lr0Table[stateIndex][symbolIndex]<=acc)&&(lr0Table[stateIndex][symbolIndex]>=S0)){//移入转移
                 sprintf(str, "%d", lr0Table[stateIndex][symbolIndex]-S0);
                 stackPush(&stateStack,str);
                 stackPush(&symbolStack,t->value);
-                printf("stateStackTop:%s\n",stateStack.symbol[stateStack.top]);
-                printf("symbolStackTop:%s\n",symbolStack.symbol[symbolStack.top]);
+                
+                if( (strcmp(currentToken, "+") != 0)&&(strcmp(currentToken, "-") != 0)&&
+                    (strcmp(currentToken, "*") != 0)&&(strcmp(currentToken, "/") != 0)&&
+                    (strcmp(currentToken, "(") != 0)&&(strcmp(currentToken, ")") != 0)&&
+                    (strcmp(currentToken, "$") != 0)  ){ 
+                    stackPush(&valueStack,t->value);
+                }
+                else{
+                    stackPush(&valueStack,"$");
+                }
+                if(controlPrint==1){
+                    printf("stateStackTop:%s\n",stateStack.symbol[stateStack.top]);
+                    printf("symbolStackTop:%s\n",symbolStack.symbol[symbolStack.top]);  
+                }
                 t=t+1;
             }
             else{//规约
-                if((lr0Table[stateIndex][symbolIndex]<=R10)&&(lr0Table[stateIndex][symbolIndex]>=R0)){
+                if((lr0Table[stateIndex][symbolIndex]<=R9)&&(lr0Table[stateIndex][symbolIndex]>=R0)){
                     ruleNum=lr0Table[stateIndex][symbolIndex]-R0;
                     switch(ruleNum){
-                        case 0://S'->E
+                        case 1://S -> E
                             stackPop(&stateStack);
                             stackPop(&symbolStack);       
-                            stackPush(&symbolStack,"S'");   
+                            stackPush(&symbolStack,"S");   
+                            result=atof(valueStack.symbol[valueStack.top]);
                             break;
-                        case 1://E->TE'
+                        case 2://E -> E + T 
                             stackPop(&stateStack);
                             stackPop(&stateStack);
+                            stackPop(&stateStack);
+                            stackPop(&symbolStack);
                             stackPop(&symbolStack);
                             stackPop(&symbolStack);
                             stackPush(&symbolStack,"E");
 
-                            //printf("result:%f\n",eVal);
+                            buf1=atof(valueStack.symbol[valueStack.top]);
+                            buf3=atof(valueStack.symbol[valueStack.top-2]);
+                            buf3=buf1+buf3;
+                            sprintf(valueStack.symbol[valueStack.top-2], "%f", buf3);
+                            valueStack.top=valueStack.top-2;
+
                             break;
-                        case 2://E'->+TE'
+                        case 3://E -> E - T
                             stackPop(&stateStack);
                             stackPop(&stateStack);
                             stackPop(&stateStack);
                             stackPop(&symbolStack);
                             stackPop(&symbolStack);
                             stackPop(&symbolStack);
-                            stackPush(&symbolStack,"E'");
-                      
+                            stackPush(&symbolStack,"E");
+
+                            buf1=atof(valueStack.symbol[valueStack.top]);
+                            buf3=atof(valueStack.symbol[valueStack.top-2]);
+                            buf3=buf1-buf3;
+                            sprintf(valueStack.symbol[valueStack.top-2], "%f", buf3);
+                            valueStack.top=valueStack.top-2;
+
                             break;
-                        case 3://E'->-TE'
-                            stackPop(&stateStack);
-                            stackPop(&stateStack);
+                        case 4://E -> T
                             stackPop(&stateStack);
                             stackPop(&symbolStack);
-                            stackPop(&symbolStack);
-                            stackPop(&symbolStack);
-                            stackPush(&symbolStack,"E'");
-                     
+                            stackPush(&symbolStack,"E");
                             break;
-                        case 4://E'->
-                            stackPush(&symbolStack,"E'");
-                            printf("stateStackTop:%s\n",stateStack.symbol[stateStack.top]);
-                            printf("symbolStackTop:%s\n",symbolStack.symbol[symbolStack.top]);  
-                            break;
-                        case 5://T->FT'
+                        case 5://T->T*F
                             stackPop(&stateStack);
                             stackPop(&stateStack);
+                            stackPop(&stateStack);
+                            stackPop(&symbolStack);
                             stackPop(&symbolStack);
                             stackPop(&symbolStack);
                             stackPush(&symbolStack,"T");
-                   
+
+                            buf1=atof(valueStack.symbol[valueStack.top]);
+                            buf3=atof(valueStack.symbol[valueStack.top-2]);
+                            buf3=buf1*buf3;
+                            sprintf(valueStack.symbol[valueStack.top-2], "%f", buf3);
+                            valueStack.top=valueStack.top-2;
+
                             break;
-                        case 6://T'->*FT'
+                        case 6://T->/F/T
                             stackPop(&stateStack);
                             stackPop(&stateStack);
                             stackPop(&stateStack);
                             stackPop(&symbolStack);
                             stackPop(&symbolStack);
                             stackPop(&symbolStack);
-                            stackPush(&symbolStack,"T'");
+                            stackPush(&symbolStack,"T");
+
+                            buf1=atof(valueStack.symbol[valueStack.top]);
+                            buf3=atof(valueStack.symbol[valueStack.top-2]);
+                            buf3=buf3/buf1;
+                            sprintf(valueStack.symbol[valueStack.top-2], "%f", buf3);
+                            valueStack.top=valueStack.top-2;
+
                             break;
-                        case 7://T'->/FT'
+                        case 7://T->F
                             stackPop(&stateStack);
-                            stackPop(&stateStack);
-                            stackPop(&stateStack);
-                            stackPop(&symbolStack);
-                            stackPop(&symbolStack);
-                            stackPop(&symbolStack);
-                            stackPush(&symbolStack,"T'");
+                            stackPop(&symbolStack);       
+                            stackPush(&symbolStack,"T");   
                             break;
-                        case 8://T'->
-                            stackPush(&symbolStack,"T'");
+                        case 8://F->num
+                            stackPop(&stateStack); 
+                            strcpy(chBuf,stackPop(&symbolStack));
+                            stackPush(&symbolStack,"F");
+
                             break;
                         case 9://F->(E)
                             stackPop(&stateStack);
@@ -215,30 +242,24 @@ void lr0Run(){
                             stackPop(&symbolStack);
                             stackPop(&symbolStack);
                             stackPush(&symbolStack,"F");
-                        
-                            break;
-                        case 10://F->num
-                            stackPop(&stateStack);
-                            strcpy(chBuf,stackPop(&symbolStack));
-                            stackPush(&symbolStack,"F");
+
+                            buf2=atof(valueStack.symbol[valueStack.top-1]);
+                            buf3=atof(valueStack.symbol[valueStack.top-2]);
+                            buf3=buf2;
+                            sprintf(valueStack.symbol[valueStack.top-2], "%f", buf3);
+                            valueStack.top=valueStack.top-2;
+
                             break;
                     }
-                    printf("stateStackTop:%s\n",stateStack.symbol[stateStack.top]);
-                    printf("symbolStackTop:%s\n",symbolStack.symbol[symbolStack.top]);  
+                    if(controlPrint==1){
+                        printf("stateStackTop:%s\n",stateStack.symbol[stateStack.top]);
+                        printf("symbolStackTop:%s\n",symbolStack.symbol[symbolStack.top]);  
+                    }
                 }
                 else{
-                    if(strcmp(currentSymbol, "F") == 0){
-                        stackPush(&symbolStack,"T'");
-                    }
-                    else{
-                        if(strcmp(currentSymbol, "T") == 0){
-                            stackPush(&symbolStack,"E'");
-                        }
-                        else{
-                            if(!(strcmp(currentState, "22") == 0)){
-                                printf("analyze erro!\n");
-                            }
-                        }
+                    if(!(strcmp(currentState, "17") == 0)){
+                        printf("analyze erro!\n");
+                        exit(1);
                     }
                 }
             }   
@@ -246,20 +267,19 @@ void lr0Run(){
         }    
         else{//转移//两个栈高度不同
             stateIndex=atoi(currentState);
-            if (strcmp(currentSymbol, "E") == 0) symbolIndex = 8;   
-            else if (strcmp(currentSymbol, "T") == 0) symbolIndex = 9;   
-            else if (strcmp(currentSymbol, "F") == 0) symbolIndex = 10;   
-            else if (strcmp(currentSymbol, "E'") == 0) symbolIndex = 11;   
-            else if (strcmp(currentSymbol, "T'") == 0) symbolIndex = 12;   
+            if (strcmp(currentSymbol, "S") == 0) symbolIndex = 8;   
+            else if (strcmp(currentSymbol, "E") == 0) symbolIndex = 9;   
+            else if (strcmp(currentSymbol, "T") == 0) symbolIndex = 10;   
+            else if (strcmp(currentSymbol, "F") == 0) symbolIndex = 11;     
             sprintf(str, "%d", lr0Table[stateIndex][symbolIndex]);
-
             stackPush(&stateStack,str);
-            printf("stateStackTop:%s\n",stateStack.symbol[stateStack.top]);
-            printf("symbolStackTop:%s\n",symbolStack.symbol[symbolStack.top]); 
+            if(controlPrint==1){
+                printf("stateStackTop:%s\n",stateStack.symbol[stateStack.top]);
+                printf("symbolStackTop:%s\n",symbolStack.symbol[symbolStack.top]);  
+            }
         }
-
     }
-    printf("result:%f\n",eVal);
-    printf("success\n");
+    printf("success!\n");
+    printf("result:%f\n",result);
 
 }

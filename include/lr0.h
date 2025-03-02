@@ -19,23 +19,17 @@
 #define S14 36
 #define S15 37
 #define S16 38
-#define S17 39
-#define S18 40
-#define S19 41
-#define S20 42
-#define S21 43
-#define acc 44
-#define R0 45
-#define R1 46
-#define R2 47
-#define R3 48
-#define R4 49
-#define R5 50
-#define R6 51
-#define R7 52
-#define R8 53
-#define R9 54
-#define R10 55
+#define acc 39
+#define R0 40
+#define R1 41
+#define R2 42
+#define R3 43
+#define R4 44
+#define R5 45
+#define R6 46
+#define R7 47
+#define R8 48
+#define R9 49
 
 
 #define MAX_STACK_SIZE 50

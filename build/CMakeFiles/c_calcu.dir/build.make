@@ -53,10 +53,10 @@ RM = /Applications/CMake.app/Contents/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/cwy/Desktop/c/c_calcu
+CMAKE_SOURCE_DIR = /Users/cwy/Desktop/c/c_calcu_lr0
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/cwy/Desktop/c/c_calcu/build
+CMAKE_BINARY_DIR = /Users/cwy/Desktop/c/c_calcu_lr0/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/c_calcu.dir/depend.make
@@ -73,46 +73,46 @@ CMakeFiles/c_calcu.dir/codegen:
 .PHONY : CMakeFiles/c_calcu.dir/codegen
 
 CMakeFiles/c_calcu.dir/src/dfa.c.o: CMakeFiles/c_calcu.dir/flags.make
-CMakeFiles/c_calcu.dir/src/dfa.c.o: /Users/cwy/Desktop/c/c_calcu/src/dfa.c
+CMakeFiles/c_calcu.dir/src/dfa.c.o: /Users/cwy/Desktop/c/c_calcu_lr0/src/dfa.c
 CMakeFiles/c_calcu.dir/src/dfa.c.o: CMakeFiles/c_calcu.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/cwy/Desktop/c/c_calcu/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/c_calcu.dir/src/dfa.c.o"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/c_calcu.dir/src/dfa.c.o -MF CMakeFiles/c_calcu.dir/src/dfa.c.o.d -o CMakeFiles/c_calcu.dir/src/dfa.c.o -c /Users/cwy/Desktop/c/c_calcu/src/dfa.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/cwy/Desktop/c/c_calcu_lr0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/c_calcu.dir/src/dfa.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/c_calcu.dir/src/dfa.c.o -MF CMakeFiles/c_calcu.dir/src/dfa.c.o.d -o CMakeFiles/c_calcu.dir/src/dfa.c.o -c /Users/cwy/Desktop/c/c_calcu_lr0/src/dfa.c
 
 CMakeFiles/c_calcu.dir/src/dfa.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/c_calcu.dir/src/dfa.c.i"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cwy/Desktop/c/c_calcu/src/dfa.c > CMakeFiles/c_calcu.dir/src/dfa.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cwy/Desktop/c/c_calcu_lr0/src/dfa.c > CMakeFiles/c_calcu.dir/src/dfa.c.i
 
 CMakeFiles/c_calcu.dir/src/dfa.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/c_calcu.dir/src/dfa.c.s"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cwy/Desktop/c/c_calcu/src/dfa.c -o CMakeFiles/c_calcu.dir/src/dfa.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cwy/Desktop/c/c_calcu_lr0/src/dfa.c -o CMakeFiles/c_calcu.dir/src/dfa.c.s
 
 CMakeFiles/c_calcu.dir/src/lr0.c.o: CMakeFiles/c_calcu.dir/flags.make
-CMakeFiles/c_calcu.dir/src/lr0.c.o: /Users/cwy/Desktop/c/c_calcu/src/lr0.c
+CMakeFiles/c_calcu.dir/src/lr0.c.o: /Users/cwy/Desktop/c/c_calcu_lr0/src/lr0.c
 CMakeFiles/c_calcu.dir/src/lr0.c.o: CMakeFiles/c_calcu.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/cwy/Desktop/c/c_calcu/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/c_calcu.dir/src/lr0.c.o"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/c_calcu.dir/src/lr0.c.o -MF CMakeFiles/c_calcu.dir/src/lr0.c.o.d -o CMakeFiles/c_calcu.dir/src/lr0.c.o -c /Users/cwy/Desktop/c/c_calcu/src/lr0.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/cwy/Desktop/c/c_calcu_lr0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/c_calcu.dir/src/lr0.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/c_calcu.dir/src/lr0.c.o -MF CMakeFiles/c_calcu.dir/src/lr0.c.o.d -o CMakeFiles/c_calcu.dir/src/lr0.c.o -c /Users/cwy/Desktop/c/c_calcu_lr0/src/lr0.c
 
 CMakeFiles/c_calcu.dir/src/lr0.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/c_calcu.dir/src/lr0.c.i"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cwy/Desktop/c/c_calcu/src/lr0.c > CMakeFiles/c_calcu.dir/src/lr0.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cwy/Desktop/c/c_calcu_lr0/src/lr0.c > CMakeFiles/c_calcu.dir/src/lr0.c.i
 
 CMakeFiles/c_calcu.dir/src/lr0.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/c_calcu.dir/src/lr0.c.s"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cwy/Desktop/c/c_calcu/src/lr0.c -o CMakeFiles/c_calcu.dir/src/lr0.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cwy/Desktop/c/c_calcu_lr0/src/lr0.c -o CMakeFiles/c_calcu.dir/src/lr0.c.s
 
 CMakeFiles/c_calcu.dir/src/main.c.o: CMakeFiles/c_calcu.dir/flags.make
-CMakeFiles/c_calcu.dir/src/main.c.o: /Users/cwy/Desktop/c/c_calcu/src/main.c
+CMakeFiles/c_calcu.dir/src/main.c.o: /Users/cwy/Desktop/c/c_calcu_lr0/src/main.c
 CMakeFiles/c_calcu.dir/src/main.c.o: CMakeFiles/c_calcu.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/cwy/Desktop/c/c_calcu/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/c_calcu.dir/src/main.c.o"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/c_calcu.dir/src/main.c.o -MF CMakeFiles/c_calcu.dir/src/main.c.o.d -o CMakeFiles/c_calcu.dir/src/main.c.o -c /Users/cwy/Desktop/c/c_calcu/src/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/cwy/Desktop/c/c_calcu_lr0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/c_calcu.dir/src/main.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/c_calcu.dir/src/main.c.o -MF CMakeFiles/c_calcu.dir/src/main.c.o.d -o CMakeFiles/c_calcu.dir/src/main.c.o -c /Users/cwy/Desktop/c/c_calcu_lr0/src/main.c
 
 CMakeFiles/c_calcu.dir/src/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/c_calcu.dir/src/main.c.i"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cwy/Desktop/c/c_calcu/src/main.c > CMakeFiles/c_calcu.dir/src/main.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/cwy/Desktop/c/c_calcu_lr0/src/main.c > CMakeFiles/c_calcu.dir/src/main.c.i
 
 CMakeFiles/c_calcu.dir/src/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/c_calcu.dir/src/main.c.s"
-	/usr/bin/clang $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cwy/Desktop/c/c_calcu/src/main.c -o CMakeFiles/c_calcu.dir/src/main.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/cwy/Desktop/c/c_calcu_lr0/src/main.c -o CMakeFiles/c_calcu.dir/src/main.c.s
 
 # Object files for target c_calcu
 c_calcu_OBJECTS = \
@@ -128,7 +128,7 @@ c_calcu: CMakeFiles/c_calcu.dir/src/lr0.c.o
 c_calcu: CMakeFiles/c_calcu.dir/src/main.c.o
 c_calcu: CMakeFiles/c_calcu.dir/build.make
 c_calcu: CMakeFiles/c_calcu.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/cwy/Desktop/c/c_calcu/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable c_calcu"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/cwy/Desktop/c/c_calcu_lr0/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C executable c_calcu"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/c_calcu.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -140,6 +140,6 @@ CMakeFiles/c_calcu.dir/clean:
 .PHONY : CMakeFiles/c_calcu.dir/clean
 
 CMakeFiles/c_calcu.dir/depend:
-	cd /Users/cwy/Desktop/c/c_calcu/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/cwy/Desktop/c/c_calcu /Users/cwy/Desktop/c/c_calcu /Users/cwy/Desktop/c/c_calcu/build /Users/cwy/Desktop/c/c_calcu/build /Users/cwy/Desktop/c/c_calcu/build/CMakeFiles/c_calcu.dir/DependInfo.cmake "--color=$(COLOR)"
+	cd /Users/cwy/Desktop/c/c_calcu_lr0/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/cwy/Desktop/c/c_calcu_lr0 /Users/cwy/Desktop/c/c_calcu_lr0 /Users/cwy/Desktop/c/c_calcu_lr0/build /Users/cwy/Desktop/c/c_calcu_lr0/build /Users/cwy/Desktop/c/c_calcu_lr0/build/CMakeFiles/c_calcu.dir/DependInfo.cmake "--color=$(COLOR)"
 .PHONY : CMakeFiles/c_calcu.dir/depend
 

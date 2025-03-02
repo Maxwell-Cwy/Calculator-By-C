@@ -1,5 +1,5 @@
 CMakeFiles/c_calcu.dir/src/main.c.o: \
-  /Users/cwy/Desktop/c/c_calcu/src/main.c \
+  /Users/cwy/Desktop/c/c_calcu_lr0/src/main.c \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/include/stdio.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/include/_stdio.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/include/sys/cdefs.h \
@@ -90,6 +90,6 @@ CMakeFiles/c_calcu.dir/src/main.c.o: \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/include/_abort.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/include/sys/_types/_dev_t.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX15.2.sdk/usr/include/sys/_types/_mode_t.h \
-  /Users/cwy/Desktop/c/c_calcu/include/dfa.h \
-  /Users/cwy/Desktop/c/c_calcu/include/parse.h \
-  /Users/cwy/Desktop/c/c_calcu/include/lr0.h
+  /Users/cwy/Desktop/c/c_calcu_lr0/include/dfa.h \
+  /Users/cwy/Desktop/c/c_calcu_lr0/include/parse.h \
+  /Users/cwy/Desktop/c/c_calcu_lr0/include/lr0.h
