@@ -3,7 +3,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include "dfa.h"
-#include "parse.h"
+//#include "parse.h"
 #include "slr.h"
 
 int main() {
